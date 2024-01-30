@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo><data>
+<!-- MAIN MENU -->
+    <menuitem name="Estates"
+        id="estate_property"
+        sequence="10"        
+        />
+        <menuitem name="Estates Records"
+        id="estate_records"
+        parent="estate_property"
+        sequence="10"        
+        />
+       
+
+</data></odoo>
