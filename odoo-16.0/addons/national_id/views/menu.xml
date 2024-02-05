@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!-- MAIN MENU -->
+        <menuitem name="National ID" id="national_id" sequence="10" />
+        <menuitem name="Application Process" id="application_process" parent="national_id" sequence="10" />
+        <menuitem name="Approval Process" id="approval_process" parent="national_id" sequence="11" />
+
+
+    </data>
+</odoo>

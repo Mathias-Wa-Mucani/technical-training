@@ -1,41 +1,48 @@
 <?xml version="1.0"?>
 <odoo>
     <data>
-        <record model="ir.ui.view" id="view_estate_proverty_form">
-            <field name="name">estate.property.form</field>
+        <record model="ir.ui.view" id="view_estate_property_form1">
+            <field name="name">estate.property.form1</field>
             <field name="model">estate.property</field>
             <field name="arch" type="xml">
                 <form>
+                    <!-- <field name="state" invisible="1"/> -->
+
                     <sheet>
                         <group>
+
                             <field name="name"/>
-                            <field name="description"/>
-                            <field name="postcode"/>
-                            <field name="date_availability"/>
-                            <field name="expected_price"/>
-                            <field name="selling_price"/>
-                            <field name="bedrooms"/>
-                            <field name="living_area"/>
-                            <field name="facades"/>
-                            <field name="garage"/>
-                            <field name="garden"/>
-                            <field name="garden_area"/>
-                            <field name="garden_orientation"/>
-                            <field name="is_active"/>
-                            <field name="sequence"/>
+                            <field name="company_id"/>
+                            <!-- <field name="last_name"/>
+                            <field name="date_of_birth"/>
+                            <field name="telephone"/>
+                            <field name="district"/>
+                            <field name="county"/>
+                            <field name="subcounty"/>
+                            <field name="parish"/>
+                            <field name="village"/>
+                            <field name="profile_picture" invisible="1"/>
+
+                            <field name="profile_picture" widget="nt_binary_preview" filename="file_name"/>
+                            <field name="lc_reference_letter" widget="nt_binary_preview" filename="file_name"/>
+                            <field name="is_active"/> -->
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="view_estate_proverty_tree">
+        <record model="ir.ui.view" id="view_estate_property_tree">
             <field name="name">estate.property.tree</field>
             <field name="model">estate.property</field>
             <field name="arch" type="xml">
                 <tree>
+                    <!-- <field name="state" invisible="1"/> -->
+
+                    <!-- <field name="company_id" invisible="1" />
+                    <field name="partner_id"/> -->
                     <field name="name"/>
-                    <field name="description"/>
+                    <!-- <field name="description"/>
                     <field name="postcode"/>
                     <field name="date_availability"/>
                     <field name="expected_price"/>
@@ -43,7 +50,7 @@
                     <field name="bedrooms"/>
                     <field name="living_area"/>
                     <field name="garden_orientation"/>
-                    <field name="is_active"/>
+                    <field name="is_active"/> -->
                 </tree>
             </field>
         </record>
@@ -52,7 +59,7 @@
             <field name="name">Estate Property</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">estate.property</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
 
         </record>
         <menuitem name="New Estate Property" id="add_estate_property" parent="estate_property" action="action_estate_property" sequence="10" />

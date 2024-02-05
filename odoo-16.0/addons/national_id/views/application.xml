@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_id_application_form">
+            <field name="name">id.application.form</field>
+            <field name="model">id.application</field>
+            <!-- <field name="name">purchase.order.form.inherited</field>
+            <field name="model">purchase.order</field> -->
+            <!-- <field name="inherit_id" ref="purchase.purchase_order_form"/> -->
+
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+                        <group>
+                            <!-- <field name="state" invisible="1"/> -->
+                            <!-- <field name="company_id" invisible="1"/> -->
+                            <!-- <field name="partner_id"/> -->
+                            <!-- <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='partner_id']" position="before">
+                                <field name="partner_id"/>
+                            </xpath> -->
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="date_of_birth"/>
+                            <field name="telephone"/>
+                            <field name="district"/>
+                            <field name="county"/>
+                            <field name="subcounty"/>
+                            <field name="parish"/>
+                            <field name="village"/>
+                            <field name="profile_picture" invisible="1"/>
+
+                            <field name="profile_picture" widget="nt_binary_preview" filename="file_name"/>
+                            <field name="lc_reference_letter" widget="nt_binary_preview"  filename="file_name"/>
+                            <field name="is_active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_id_application_tree">
+            <field name="name">id.application.tree</field>
+            <field name="model">id.application</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- <field name="state" invisible="1"/> -->
+
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="date_of_birth"/>
+                    <field name="telephone"/>
+                    <field name="district"/>
+                    <field name="county"/>
+                    <field name="subcounty"/>
+                    <field name="parish"/>
+                    <field name="village"/>
+
+                    <field name="profile_picture" invisible="1"  />
+                    <field name="profile_picture" filename="file_name" widget="nt_binary_preview" />
+                    <field name="lc_reference_letter" filename="file_name" widget="nt_binary_preview" />
+                    <field name="is_active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_id_application">
+            <field name="name">ID Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">id.application</field>
+            <field name="view_mode">tree,kanban,form</field>
+
+        </record>
+        <menuitem name="New ID Application" id="add_id_application" parent="application_process" action="action_id_application" sequence="10" />
+
+    </data>
+</odoo>

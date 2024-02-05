@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_id_application,id.application,model_id_application,base.group_user,1,1,1,1
+access_id_approval,id.approval,model_id_approval,base.group_user,1,1,1,1

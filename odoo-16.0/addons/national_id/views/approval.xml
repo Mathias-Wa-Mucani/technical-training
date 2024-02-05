@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_id_approval_form">
+            <field name="name">id.approval.form</field>
+            <field name="model">id.approval</field>
+            <!-- <field name="name">purchase.order.form.inherited</field>
+            <field name="model">purchase.order</field> -->
+            <!-- <field name="inherit_id" ref="purchase.purchase_order_form"/> -->
+
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+                        <group>
+                            <!-- <field name="state" invisible="1"/> -->
+                            <!-- <field name="company_id" invisible="1"/> -->
+                            <!-- <field name="partner_id"/> -->
+                            <!-- <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='partner_id']" position="before">
+                                <field name="partner_id"/>
+                            </xpath> -->
+                            <field name="application_id"/>
+                            <field name="stage1_approved_by" attrs="{'readonly': [('stage2_approved_by', '=', True)]}" />
+                            <field name="stage1_approved_at" attrs="{'readonly': [('stage2_approved_by', '=', True)]}"/>
+                            <field name="stage2_approved_by" attrs="{'readonly': [('stage1_approved_by', '=', False)]}"/>
+                            <field name="stage2_approved_at" attrs="{'readonly': [('stage1_approved_by', '=', False)]}"/>
+
+                        </group>
+                    </sheet>
+                </form>
+                <div class="oe_chatter">
+
+                    <field name="message_follower_ids" widget="mail_followers"/>
+
+                    <field name="message_ids" widget="mail_thread"/>
+
+                </div>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_id_approval_tree">
+            <field name="name">id.approval.tree</field>
+            <field name="model">id.approval</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- <field name="state" invisible="1"/> -->
+
+                    <field name="application_id"/>
+                    <field name="stage1_approved_by"/>
+                    <field name="stage1_approved_at"/>
+                    <field name="stage2_approved_by"/>
+                    <field name="stage2_approved_at"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_id_approval">
+            <field name="name">ID approval</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">id.approval</field>
+            <field name="view_mode">tree,kanban,form</field>
+
+        </record>
+        <menuitem name="ID Approval" id="add_id_approval" parent="approval_process" action="action_id_approval" sequence="11" />
+
+    </data>
+</odoo>

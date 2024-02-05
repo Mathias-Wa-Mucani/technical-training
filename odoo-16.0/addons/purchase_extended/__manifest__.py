@@ -2,19 +2,20 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Estate',
+    'name': 'Purchase Extended',
     'version': '1.0',
-    'depends': ['base', 'mail'],
+    'depends': ['base', 'mail', 'purchase', 'sale'],
     'author': "Mulumba Mathias Mucani",
-    'category': 'Esates',
+    'category': 'Purchase Extended',
     'description': """
-    Real Estates Management App
+    Purchase Module Extended for further functionalities
     """,
     # data files always loaded at installation
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/property.xml',
+        'views/purchase.xml',
 
         # 'views/mymodule_view.xml',
     ],
